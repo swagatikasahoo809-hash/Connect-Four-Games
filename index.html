@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5c842">
+  <title>Connect Four</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="game.js" defer></script>
+</head>
+<body>
+  <main class="game-shell">
+    <header class="topbar">
+      <a class="brand" href="." aria-label="Connect Four home">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+        <span>FOUR<span class="brand-accent">PLAY</span></span>
+      </a>
+      <button class="reset-button" id="reset-button" type="button">
+        <span aria-hidden="true">↻</span> New game
+      </button>
+    </header>
+
+    <section class="game-content" aria-labelledby="game-title">
+      <div class="game-heading">
+        <p class="eyebrow">Two players · One board</p>
+        <h1 id="game-title">Connect <span>Four.</span></h1>
+        <p class="subtitle">Drop four in a row. Don’t give the game away.</p>
+      </div>
+
+      <div class="score-row" aria-live="polite">
+        <div class="player-label player-red" id="red-player">
+          <span class="player-dot" aria-hidden="true"></span>
+          <span>Red</span>R
+        </div>
+        <p class="turn-message" id="turn-message">Red's turn</p>
+        <div class="player-label player-yellow" id="yellow-player">
+          <span class="player-dot" aria-hidden="true"></span>
+          <span>Yellow</span>
+        </div>
+      </div>
+
+      <div class="board-wrap">
+        <div class="board" id="game-board" role="grid" aria-label="Connect Four game board"></div>
+      </div>
+      <p class="board-hint">Choose any spot in a column to drop your disc</p>
+    </section>
+
+    <footer class="footer"><span>RED</span><span class="footer-star" aria-hidden="true">✳</span><span>VS</span><span class="footer-star" aria-hidden="true">✳</span><span>YELLOW</span></footer>
+  </main>
+
+  <div class="winner-overlay" id="winner-overlay" hidden>
+    <section class="winner-panel" role="dialog" aria-modal="true" aria-labelledby="winner-title">
+      <p class="winner-kicker" id="winner-kicker">Four in a row!</p>
+      <h2 id="winner-title">RED WINS!</h2>
+      <button class="play-again-button" id="play-again-button" type="button">Play again <span aria-hidden="true">↗</span></button>
+    </section>
+  </div>
+</body>
+</html>
